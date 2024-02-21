@@ -1,0 +1,47 @@
+.car-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.car-table th,
+.car-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.car-table th {
+  background-color: #f2f2f2;
+}
+
+.car-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.car-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+.car-image {
+  max-width: 100px;
+  max-height: 100px;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-tooltip {
+  position: absolute;
+  bottom: 100%;
+  /* Adjust based on your needs */
+  left: 90%;
+  transform: translateX(-50%);
+  background-color: #919090;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  z-index: 1;
+  white-space: nowrap;
+}

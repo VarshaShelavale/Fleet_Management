@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #2e3437;
+  color: #fff;
+  overflow: auto; /* Add overflow to prevent collapsing */
+}
+
+header img {
+  width: 100px;
+  height: 60px;
+  margin-left: 15px;
+}
+
+header h5 {
+  margin: 0;
+}

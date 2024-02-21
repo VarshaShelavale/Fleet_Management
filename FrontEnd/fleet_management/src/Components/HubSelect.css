@@ -1,0 +1,54 @@
+.hubSelectContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hubForm {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.hubOption {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.hubOption input[type="radio"] {
+  margin-right: 10px;
+}
+
+.hubName {
+  font-weight: bold;
+}
+
+.hubDetails {
+  font-size: 14px;
+  color: #666;
+}
+
+.continueButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.continueButton:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .hubForm {
+    padding: 10px;
+  }
+
+  .continueButton {
+    width: 100%;
+  }
+}

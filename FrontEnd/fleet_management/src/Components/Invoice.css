@@ -1,0 +1,17 @@
+.containerinvoice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+
+.brcode {
+  margin-right: 20px; /* Adjust spacing between barcode and company info */
+}
+
+@media (max-width: 768px) {
+  .containerinvoice {
+    padding: 20px; /* Add padding for smaller screens */
+  }
+}

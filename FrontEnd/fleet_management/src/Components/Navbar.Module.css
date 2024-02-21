@@ -1,0 +1,49 @@
+nav {
+  background-color: #2e3437;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+.login-button {
+  float: right;
+}
+
+/* Add this CSS to style the login button */
+.login-button a {
+  display: inline-block; /* Change display to inline-block */
+  background-color: #4caf50; /* Choose a different background color */
+  border: none; /* Remove border */
+  color: white;
+  text-align: center;
+  padding: 14px 20px; /* Increase padding for a larger button */
+  text-decoration: none;
+  transition: background-color 0.3s; /* Add transition for smooth hover effect */
+  border-radius: 5px;
+  margin: 10px;
+  /* Add border-radius for rounded corners */
+}
+
+/* Add this CSS to style the login button on hover */
+.login-button a:hover {
+  background-color: #45a049; /* Darken the background color on hover */
+}

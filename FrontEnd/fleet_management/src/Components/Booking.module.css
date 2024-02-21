@@ -1,0 +1,20 @@
+.bookingform {
+  width: 50%; /* Adjust the width as needed */
+  margin: 0 auto; /* This centers the form horizontally */
+  background-color: #c7ecee; /* Pastel blue color */
+  padding: 20px;
+}
+
+button {
+  display: inline-block; /* Ensure buttons are on the same line */
+  margin-top: 10px; /* Adjust spacing between buttons */
+  background-color: #55aaff; /* Button color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3b8bda; /* Darker blue on hover */
+}
