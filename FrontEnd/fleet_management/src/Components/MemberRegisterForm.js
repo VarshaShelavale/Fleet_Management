@@ -43,8 +43,14 @@ function MemberRegisterForm() {
       })
       .then((data) => {
         console.log("Success:", data);
-        login(data);
-        navigate("/");
+        const token = data.token;
+        if (token) {
+          login(data.registration);
+          localStorage.setItem("token", token);
+          navigate("/");
+        } else {
+          setErrorMessage("Please enter  valid credentials...");
+        }
       })
       .catch((error) => {
         console.error("Error:", error);

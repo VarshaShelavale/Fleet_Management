@@ -24,12 +24,17 @@ function Login() {
         `http://localhost:8080/api/register/${email}/${password}`
       );
       const result = await response.json();
-      login(result);
-      console.log(result);
-
-      if (state === "formfill") {
-        navigate("/booking");
-      } else navigate("/");
+      const token = result.token;
+      if (token) {
+        console.log(result);
+        login(result.registration);
+        localStorage.setItem("token", token);
+        if (state === "formfill") {
+          navigate("/booking");
+        } else navigate("/");
+      } else {
+        setError("Please enter  valid credentials...");
+      }
     } catch (error) {
       setError("Please enter  valid credentials...");
     }

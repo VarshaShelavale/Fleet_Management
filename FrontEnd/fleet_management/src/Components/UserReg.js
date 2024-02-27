@@ -42,8 +42,14 @@ function UserReg() {
         return response.json();
       })
       .then((data) => {
-        console.log("Success:", data);
-        login(data);
+        const token = data.token;
+        if (token) {
+          login(data.registration);
+          localStorage.setItem("token", token);
+          navigate("/");
+        } else {
+          setErrorMessage("Please enter  valid credentials...");
+        }
         navigate("/booking");
       })
       .catch((error) => {

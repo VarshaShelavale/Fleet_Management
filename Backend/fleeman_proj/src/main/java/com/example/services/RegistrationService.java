@@ -8,7 +8,7 @@ import com.example.entities.Registration;
 import com.example.repository.RegistrationRepository;
 
 @Service
-public class RegistrationService {
+public class RegistrationService  {
 	@Autowired
 	private  RegistrationRepository registrationRepository;
 
@@ -25,5 +25,6 @@ public class RegistrationService {
 		return registrationRepository.getUserByEmail(emailId); 
 	}
 
+	
 
 }

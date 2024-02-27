@@ -74,17 +74,27 @@ function ReservationForm() {
   }, [pickUpState, returnState]);
 
   useEffect((e) => {
-    fetch("http://localhost:8080/api/getairports")
-      .then((res) => res.json())
-      .then((data) => setairports(data));
-  }, []);
-  useEffect((e) => {
     fetch("http://localhost:8080/api/states")
       .then((res) => res.json())
       .then((data) => {
         setState(data);
       });
   }, []);
+  useEffect(
+    (e) => {
+      console.log("airport");
+      fetch("http://localhost:8080/api/getairports")
+        .then((res) => res.json())
+        .then((data) => {
+          setairports(data);
+          console.log(data);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+    [selectedOption]
+  );
   useEffect(() => {
     // Fetch cities for the selected state
     const fetchCities = async (stateid, setCities) => {
@@ -243,10 +253,10 @@ function ReservationForm() {
                     <option>Select</option>
                     {airports.map((airport) => (
                       <option
-                        key={airport.airport_code}
-                        value={airport.airport_code}
+                        key={airport.airportCode}
+                        value={airport.airportCode}
                       >
-                        {airport.airport_name}
+                        {airport.airportName}
                       </option>
                     ))}
                   </select>

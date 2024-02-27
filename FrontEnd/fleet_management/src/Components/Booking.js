@@ -16,6 +16,7 @@ function Booking() {
   const navigate = useNavigate();
   const [estamt, setEstamt] = useState();
   const user = JSON.parse(sessionStorage.getItem("userinfo"));
+  const mytoken = localStorage.getItem("token");
   function calculateDays(startDateStr, endDateStr) {
     const startDate = new Date(startDateStr);
     const endDate = new Date(endDateStr);
@@ -63,10 +64,12 @@ function Booking() {
       pickuphub_id: selectedpickHub[0].hub_id,
     };
     console.log(JSON.stringify(booking));
+    // const header = { Authorization: `Bearer ${mytoken}` };
     fetch("http://localhost:8080/api/bookingsave", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${mytoken}`,
       },
       body: JSON.stringify(booking),
     })

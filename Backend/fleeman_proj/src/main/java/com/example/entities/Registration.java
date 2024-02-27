@@ -1,7 +1,6 @@
 package com.example.entities;
 
 
-import java.time.LocalDate;
 import java.util.*;
 
 import jakarta.persistence.CascadeType;
@@ -27,7 +26,6 @@ public class Registration {
 	private String mobileNumber; 
 	@Column(unique=true)
 	private String emailId;
-	
 	private String password;
 	@Column(unique=true)
 	private String dLNumber;

@@ -14,10 +14,10 @@ public class InvoiceService {
   private  InvoiceRepository invoicerepo;
 
     
-    public void SaveDetails(Pdf_demo pdfdemo) {
+    public Optional<Pdf_demo> SaveDetails(Pdf_demo pdfdemo) {
     	
     	invoicerepo.save(pdfdemo);
-		
+		return null;
     }
    public Optional<Pdf_demo> GetDetails(int Invoice_id) {
     	

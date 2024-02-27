@@ -11,8 +11,16 @@ const AddOnpage = () => {
   const [adonlist, setaddonlist] = useState([]);
 
   const { isAuthenticated, isadminAuthenticated } = useSelectedOptions();
-  const handleCheckboxChange = (e) => {
-    settotal_amt((amt) => amt + e);
+  const handleCheckboxChange = (addon) => {
+    settotal_amt((amt) => amt + addon.daily_rate * (addon.checked ? -1 : 1));
+
+    setaddonlist((prevList) =>
+      prevList.map((item) =>
+        item.addon_name === addon.addon_name
+          ? { ...item, checked: !item.checked }
+          : item
+      )
+    );
   };
   useEffect(() => {
     fetch("http://localhost:8080/api/getaddon")
@@ -40,8 +48,9 @@ const AddOnpage = () => {
           <div className="addon-item">
             <input
               type="checkbox"
-              id="gpsCheckbox"
-              onChange={(e) => handleCheckboxChange(addon.daily_rate)}
+              id={addon.addon_name}
+              onChange={() => handleCheckboxChange(addon)}
+              checked={addon.checked}
             />
             <label htmlFor="gpsCheckbox">{addon.addon_name}</label>
             <label className="rate">Rate: Rs.{addon.daily_rate}</label>

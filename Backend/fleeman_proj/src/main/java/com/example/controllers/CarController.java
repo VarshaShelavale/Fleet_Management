@@ -35,7 +35,7 @@ public class CarController {
 		carservice.UpdateAvailable(carId, isAvailable);
 	}
 	 @PutMapping("api/{carId}/hubId")
-	    public void updateCarHubId(@PathVariable("carId") int carId, @RequestParam("hubId") int hubId) {
+	    public void updateCarHubId(@PathVariable int carId, @RequestParam int hubId) {
 	         carservice.updateCarHubid(carId, hubId);
 	       
 	    }
